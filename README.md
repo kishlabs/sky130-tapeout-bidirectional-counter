@@ -15,6 +15,10 @@
 
 This project takes an 8-bit synchronous up/down counter all the way from a blank Verilog file to a **manufacturable GDSII layout**, running every stage of the ASIC physical design flow by hand — Yosys for synthesis, OpenROAD for floorplanning through routing, Magic for GDSII generation and sign-off DRC — on the real, open-source SkyWater Sky130 process.
 
+## Engineering documentation
+
+The complete stage-by-stage implementation record is available in [`doc/README.md`](doc/README.md). It documents the objective, inputs, implementation decisions, outputs, acceptance criteria, measured results, and sign-off boundary for every major stage of the flow.
+
 The counter itself is intentionally simple. The point of this repository isn't the circuit — it's the flow: every stage below was actually run, its output actually read and cross-checked against the stage before it, and at least two real bugs were found, root-caused, and fixed along the way rather than engineered around. That process — and the evidence for it — is what this README documents.
 
 ---
