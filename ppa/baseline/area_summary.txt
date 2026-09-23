@@ -1,0 +1,18 @@
+     sky130_fd_sc_hd__o31ai_1        1
+     sky130_fd_sc_hd__or4_1          2
+     sky130_fd_sc_hd__xnor2_1        6
+     sky130_fd_sc_hd__xor2_1         1
+
+   Chip area for module '\up_down_counter': 500.480000
+     of which used for sequential elements: 160.153600 (32.00%)
+
+7. Executing Verilog backend.
+
+7.1. Executing BMUXMAP pass.
+
+7.2. Executing DEMUXMAP pass.
+Dumping module `\up_down_counter'.
+
+End of script. Logfile hash: 720e7b957a, CPU: user 0.23s system 0.10s, MEM: 42.70 MB peak
+Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)
+Time spent: 53% 2x abc (0 sec), 18% 1x dfflibmap (0 sec), ...

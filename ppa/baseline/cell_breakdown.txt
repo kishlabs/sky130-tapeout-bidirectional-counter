@@ -1,0 +1,131 @@
+   Number of ports:                  6
+   Number of port bits:             13
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 62
+     $_ANDNOT_                      15
+     $_AND_                          1
+     $_MUX_                          1
+     $_NAND_                         3
+     $_NOR_                          6
+     $_NOT_                          1
+     $_ORNOT_                        5
+     $_OR_                           8
+     $_SDFFE_PN0P_                   8
+     $_XNOR_                         1
+     $_XOR_                         13
+
+2.26. Executing CHECK pass (checking for obvious problems).
+Checking module up_down_counter...
+Found and reported 0 problems.
+
+3. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_1 (noninv, pins=3, area=20.02) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtn_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_NN0_.
+  cell sky130_fd_sc_hd__dfrtp_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__edfxtp_1 (noninv, pins=4, area=30.03) is a direct match for cell type $_DFFE_PP_.
+  cell sky130_fd_sc_hd__dfbbn_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_NNN_.
+  cell sky130_fd_sc_hd__dfbbp_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_PNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    \sky130_fd_sc_hd__dfrtn_1 _DFF_NN0_ (.CLK_N( C), .D( D), .Q( Q), .RESET_B( R));
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    \sky130_fd_sc_hd__edfxtp_1 _DFFE_PP_ (.CLK( C), .D( D), .DE( E), .Q( Q));
+    \sky130_fd_sc_hd__dfbbn_1 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \sky130_fd_sc_hd__dfbbp_1 _DFFSR_PNN_ (.CLK( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+3.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+<suppressed ~24 debug messages>
+Mapping DFF cells in module `\up_down_counter':
+  mapped 8 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_1 cells.
+
+4. Executing ABC pass (technology mapping using ABC).
+
+4.1. Extracting gate netlist of module `\up_down_counter' to `<abc-temp-dir>/input.blif'..
+Extracted 70 gates and 82 wires to a netlist network with 11 inputs and 9 outputs.
+
+4.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lib -w /home/kumar/.ciel/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.12 sec
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_12" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_3" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_4" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_6" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped cell "sky130_fd_sc_hd__decap_8" without logic function.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_1".
+--
+   Number of ports:                  6
+   Number of port bits:             13
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 64
+     sky130_fd_sc_hd__a211o_1        1
+     sky130_fd_sc_hd__a211oi_1       1
+     sky130_fd_sc_hd__a21boi_0       1
+     sky130_fd_sc_hd__a21o_1         1
+     sky130_fd_sc_hd__a21oi_1       10
+     sky130_fd_sc_hd__a32oi_1        1
+     sky130_fd_sc_hd__a41oi_1        1
+     sky130_fd_sc_hd__and2_0         1
+     sky130_fd_sc_hd__and3b_1        1
+     sky130_fd_sc_hd__clkinv_1       2
+     sky130_fd_sc_hd__dfxtp_1        8
+     sky130_fd_sc_hd__lpflow_inputiso1p_1      1
+     sky130_fd_sc_hd__lpflow_isobufsrc_1      2
+     sky130_fd_sc_hd__nand2_1        3
+     sky130_fd_sc_hd__nand2b_1       3
+     sky130_fd_sc_hd__nand3_1        2
+     sky130_fd_sc_hd__nand4_1        2
+     sky130_fd_sc_hd__nor2_1         4
+     sky130_fd_sc_hd__o21ai_0        8
+     sky130_fd_sc_hd__o311ai_0       1
+     sky130_fd_sc_hd__o31ai_1        1
+     sky130_fd_sc_hd__or4_1          2
+     sky130_fd_sc_hd__xnor2_1        6
+     sky130_fd_sc_hd__xor2_1         1
+
+   Chip area for module '\up_down_counter': 500.480000
+     of which used for sequential elements: 160.153600 (32.00%)
+
+7. Executing Verilog backend.
+
+7.1. Executing BMUXMAP pass.
+
+7.2. Executing DEMUXMAP pass.
+Dumping module `\up_down_counter'.
+
+End of script. Logfile hash: 720e7b957a, CPU: user 0.23s system 0.10s, MEM: 42.70 MB peak
+Yosys 0.52 (git sha1 fee39a3284c90249e1d9684cf6944ffbbcbb8f90)
+Time spent: 53% 2x abc (0 sec), 18% 1x dfflibmap (0 sec), ...
