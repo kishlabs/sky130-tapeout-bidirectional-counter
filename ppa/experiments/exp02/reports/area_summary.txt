@@ -1,0 +1,14 @@
+Experiment: Exp02
+RTL: ppa/experiments/exp02/up_down_counter.v
+Top module: up_down_counter
+Library: sky130_fd_sc_hd__tt_025C_1v80
+
+   Number of cells:                 62
+  cell sky130_fd_sc_hd__dfxtp_1 (noninv, pins=3, area=20.02) is a direct match for cell type $_DFF_P_.
+    \sky130_fd_sc_hd__dfxtp_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+  mapped 8 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_1 cells.
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_1".
+   Number of cells:                 64
+     sky130_fd_sc_hd__dfxtp_1        8
+   Chip area for module '\up_down_counter': 500.480000
+     of which used for sequential elements: 160.153600 (32.00%)

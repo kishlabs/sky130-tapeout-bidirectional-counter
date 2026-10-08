@@ -1,0 +1,14 @@
+read_verilog ppa/experiments/exp02/up_down_counter.v
+
+hierarchy -check -top up_down_counter
+
+synth -top up_down_counter
+
+dfflibmap -liberty /home/kumar/.ciel/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty /home/kumar/.ciel/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+opt_clean -purge
+
+stat -liberty /home/kumar/.ciel/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+write_verilog -noattr ppa/experiments/exp02/synth/up_down_counter_synth.v
